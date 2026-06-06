@@ -9,7 +9,7 @@ const listingSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    img: {
+    image: {
         type: String,
         default: "../sources/images/default.png"
     },
