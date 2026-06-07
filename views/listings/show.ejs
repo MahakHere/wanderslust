@@ -1,38 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<% layout("/layouts/boilerplate.ejs")%>
+    <%title=result.title%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <%=result.title%>
-    </title>
-</head>
-
-<body>
-    <h3>
-        <%=result.title%>
-    </h3>
-    <img src="<%=result.image%>">
-    <p>
-        <%=result.description%>
-    </p>
-    <p>
-        &#8377; <%=result.price.toLocaleString("en-IN")%>
-    </p>
-    <p>
-        <%=result.location%>
-    </p>
-    <p>
-        <%=result.country%>
-    </p>
-    <form method="GET" action="/listings/<%=result._id%>/edit">
-        <button>Edit</button>
-    </form>
-    <br>
-    <form method="POST" action="/listings/<%=result._id%>?_method=DELETE">
-        <button>Delete</button>
-    </form>
-</body>
-
-</html>
+        <body>
+            <h3>
+                <%=result.title%>
+            </h3>
+            <img src="<%=result.image%>">
+            <p>
+                <%=result.description%>
+            </p>
+            <p>
+                &#8377; <%=result.price.toLocaleString("en-IN")%>
+            </p>
+            <p>
+                <%=result.location%>
+            </p>
+            <p>
+                <%=result.country%>
+            </p>
+            <form method="GET" action="/listings/<%=result._id%>/edit">
+                <button>Edit</button>
+            </form>
+            <br>
+            <form method="POST" action="/listings/<%=result._id%>?_method=DELETE">
+                <button>Delete</button>
+            </form>
+        </body>
