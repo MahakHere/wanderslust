@@ -2,15 +2,16 @@
 <% title="Wanderslust" %>
 
 <body>
-    <div class="AllListings row justify-content-center">
-    <% for(ele of result) { %>
-        <div class="card col-md-3 list-index">
-            <a href="/listings/<%=ele._id%>"><img src="<%=ele.image%>" class="card-img-top" alt="..."></a>
-            <div class="card-body">
-                <a href="/listings/<%=ele._id%>" class="card-title"><%= ele.title %></a>
-                <p class="card-text">&#8377; <%=ele.price.toLocaleString("en-IN")%> / night</p>
+        <div class="AllListings row">
+        <% for(ele of result) { %>
+            <div class="card col-md-3 list-index">
+                <a href="/listings/<%=ele._id%>"><img src="<%=ele.image%>" class="card-img-top" alt="..."></a>
+                <div class="card-body list-index-body">
+                    <a href="/listings/<%=ele._id%>" class="card-title"><%= ele.title %></a>
+                    <p class="card-text">&#8377; <%=ele.price.toLocaleString("en-IN")%> / night</p>
+                </div>
             </div>
+        <% } %>
         </div>
-    <% } %>
-    </div>
+    
 </body>

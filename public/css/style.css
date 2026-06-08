@@ -66,21 +66,46 @@ footer{
     margin: .75rem;
 }
 
+/* Home page */
+.home-div{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    min-height:80vh
+}
+
+.home-btn{
+    background-color: #FF4500;
+    border:none;
+}
+
+.home-btn:hover{
+    background-color: #FF4500;
+    opacity:0.75;
+}
+
+
+
 /* index page */
-.AllListings {
-    margin: 0;
+.list-index-body {
+    padding-top:1rem;
+    padding-bottom: 1rem;
+    padding-left:0;
+    padding-right:0
 }
 
 .list-index {
-    margin: .25rem;
     border-radius: 1rem;
-    padding:0
-} 
+    border:0;
+    padding:1rem;
+}
 
 .card a img {
-    border-radius: 1rem;
     height: 16rem;
     width:100%;
+    
+    border-radius: 1rem !important;
 }
 
 .card a img:hover {

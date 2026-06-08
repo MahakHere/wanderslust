@@ -23,6 +23,11 @@ async function main() {
     await mongoose.connect("mongodb://127.0.0.1:27017/wanderslust");
 }
 
+//Home route
+app.get("/",(req,res)=>{
+    res.render("listings/home.ejs");
+})
+
 //index route
 app.get("/listings", (req, res) => {
     Listing.find({}).then((result) => {
