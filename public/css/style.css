@@ -172,3 +172,9 @@ border:none;
     border-radius:1rem;
     border:0;
 }
+
+/* error.ejs */
+.bi{
+    height:1.5rem;
+    width:1.5rem;
+}

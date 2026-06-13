@@ -4,31 +4,37 @@
     <body>
         <div class="row">
             <div class="col-8 offset-2">
-                <form class="form" method="POST" action="/listings/<%=result._id%>?_method=PUT">
+                <form class="form needs-validation" method="POST" action="/listings/<%=result._id%>?_method=PUT" novalidate >
                     <div class="mb-3">
                         <label class="form-label">Edit your Title :</label>
-                        <input class="form-control" name="newTitle" value="<%=result.title%>" type="text">
+                        <input class="form-control" name="newTitle" value="<%=result.title%>" type="text" required>
+                        <div class="invalid-feedback">Enter a valid Title.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Redescribe :</label>
-                        <textarea class="form-control" name="newDescription"><%=result.description%></textarea>
+                        <textarea class="form-control" name="newDescription" required><%=result.description%></textarea>
+                        <div class="invalid-feedback">Enter a valid Description.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label"> Edit your price :</label>
-                        <input class="form-control" name="newPrice" value="<%=result.price%>" type="number">
+                        <input class="form-control" name="newPrice" value="<%=result.price%>" type="number" required>
+                        <div class="invalid-feedback">Enter a valid Price.</div>
                     </div>
                     <div class="mb-3">
                         <label class="form-label">Add another URL :</label>
-                        <input class="form-control" name="newImage" value="<%=result.image%>" type="text">
+                        <input class="form-control" name="newImage" value="<%=result.image%>" type="text" required>
+                        <div class="invalid-feedback">Enter a valid URL.</div>
                     </div>
                     <div class="row">
                         <div class="mb-3 col-md-4">
                             <label class="form-label">Edit Location :</label>
-                            <input class="form-control" name="newLocation" value="<%=result.location%>" type="text">
+                            <input class="form-control" name="newLocation" value="<%=result.location%>" type="text" required>
+                            <div class="invalid-feedback">Enter a valid Location.</div>
                         </div>
                         <div class="mb-3 col-md-8">
                             <label class="form-label">Edit country :</label>
-                            <input class="form-control" name="newCountry" value="<%=result.country%>" type="text">
+                            <input class="form-control" name="newCountry" value="<%=result.country%>" type="text" required>
+                            <div class="invalid-feedback">Enter a valid Country.</div>
                         </div>
                     </div>
                     <button class="btn btn-dark update-btn">Update</button>
@@ -36,3 +42,5 @@
             </div>
         </div>
     </body>
+
+    
