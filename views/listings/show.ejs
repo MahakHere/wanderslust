@@ -24,6 +24,21 @@
                         </form>
                     </diV>
                 </diV>
+                <div>
+                    <hr>
+                    <h4>Add a Review!</h4>
+                    <form method="POST" action="/listings/<%=result._id %>/reviews">
+                        <div class="mb-3">
+                            <label for="rating" class="form-label">Rate out of 5:</label>
+                            <input id="rating" type="range" min="1" max="5" name="review[review]" class="form-range">
+                        </div>
+                        <div class="mb-3">
+                            <label for="comment" class="form-label">Write a comment:</label>
+                            <textarea id="comment" name="review[comment]" class="form-control"></textarea>
+                        </div>
+                        <button class="btn btn-dark submitreview-btn">Submit</button>
+                    </form>
+                </div>
             </div>
         </div>
         </div>

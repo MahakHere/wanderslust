@@ -173,6 +173,17 @@ border:none;
     border:0;
 }
 
+.submitreview-btn{
+    background-color:#FF4500;
+    border:none;
+    width:5rem;
+}
+
+.submitreview-btn:hover{
+    background-color:#FF4500;
+    opacity:.75;
+}
+
 /* error.ejs */
 .bi{
     height:1.5rem;

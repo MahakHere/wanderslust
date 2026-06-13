@@ -8,6 +8,7 @@ const ejsMate = require("ejs-mate");
 const wrapAsync = require("./utils/wrapAsync.js");
 const ExpressError = require("./utils/ExpressError.js");
 const listingScema = require("./schema.js");
+const Review = require("./models/review.js")
 
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
@@ -35,6 +36,8 @@ main().then(() => {
 async function main() {
     await mongoose.connect("mongodb://127.0.0.1:27017/wanderslust");
 }
+
+//listing model
 
 //Home route
 app.get("/",(req,res)=>{
@@ -90,6 +93,21 @@ app.delete("/listings/:id", wrapAsync(async(req, res,next) => {
     console.log("successfully deleted");
     res.redirect("/listings");
 }));
+
+//review model
+
+//create(post) route
+app.post("/listings/:id/reviews",async(req,res)=>{
+    let {id} = req.params;
+    let searchedListing = await Listing.findById(id);
+    
+    let newReview= new Review(req.body.review);
+    searchedListing.reviews.push(newReview);
+
+    await searchedListing.save();
+    await newReview.save();
+    res.redirect(`/listings/${id}`)
+});
 
 //error handling for all non existing routes
 app.use((req,res,next)=>{
